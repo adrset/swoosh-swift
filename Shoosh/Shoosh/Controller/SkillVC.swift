@@ -10,26 +10,43 @@ import UIKit
 
 class SkillVC: UIViewController {
 
+    var player: Player!
+    
+    @IBOutlet weak var nextBtn: BorderButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func onSummaryTapped(_ sender: Any) {
+        performSegue(withIdentifier: "summaryVCSegue", sender: self)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func unwindFromSummaryVC(unwindSegue: UIStoryboardSegue){
+        
     }
-    */
+    
+    @IBAction func onBegginerTapped(_ sender: Any) {
+        setSkillLevel(level: "begginer")
+    }
+    
+    @IBAction func onBallerTapped(_ sender: Any) {
+        setSkillLevel(level: "baller")
+    }
+    
+    func setSkillLevel(level: String){
+        player.selectedSkillLevel = level;
+        nextBtn.isEnabled = true
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let summaryVC = segue.destination as? SummaryVC { // try to assign - unwraping
+            // prepare is always called before viewDidLoad() !
+            summaryVC.player = player
+        }
+    }
+    
+    
+    
+    
 
 }

@@ -30,6 +30,10 @@ class LeagueVC: UIViewController {
         
     }
     
+    @IBAction func unwindFromSkillVC(unwindSegue: UIStoryboardSegue){
+        
+    }
+    
     @IBAction func onWomensTapped(_ sender: Any) {
         selectLeague(leagueType: "womens")
     }
@@ -40,6 +44,13 @@ class LeagueVC: UIViewController {
     }
     @IBAction func onCoedTapped(_ sender: Any) {
         selectLeague(leagueType: "coed")
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let skillVC = segue.destination as? SkillVC { // try to assign - unwraping
+            // prepare is always called before viewDidLoad() !
+            skillVC.player = player
+        }
     }
     
 }
