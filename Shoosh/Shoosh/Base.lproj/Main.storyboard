@@ -16,10 +16,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--WelcomeVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Shoosh" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="WelcomeVC" customModule="Shoosh" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -54,7 +54,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="xCU-Gy-Sle" kind="show" identifier="firstSecond" id="v6P-lO-Ugp"/>
+                                    <action selector="onGetStartedTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="089-Mc-O5v"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="swooshLogo" translatesAutoresizingMaskIntoConstraints="NO" id="zUe-in-cM2">
@@ -98,16 +98,17 @@ the league</string>
                     <connections>
                         <outlet property="bgImage" destination="Jtp-LM-eWL" id="iD3-z0-YkB"/>
                         <outlet property="swoosh" destination="zUe-in-cM2" id="A3l-8R-jI0"/>
+                        <segue destination="xCU-Gy-Sle" kind="show" identifier="leagueVCSegue" id="Cip-dA-PmL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-57" y="117"/>
         </scene>
-        <!--View Controller-->
+        <!--LeagueVC-->
         <scene sceneID="DOg-xk-d3f">
             <objects>
-                <viewController id="xCU-Gy-Sle" sceneMemberID="viewController">
+                <viewController id="xCU-Gy-Sle" customClass="LeagueVC" customModule="Shoosh" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KUK-jM-5y8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -145,7 +146,7 @@ the league</string>
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="efF-R5-GA5" kind="show" identifier="secondThird" id="mvG-HX-Srj"/>
+                                    <action selector="onNextTapped:" destination="xCU-Gy-Sle" eventType="touchUpInside" id="Cs6-p1-j0R"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="6gC-v5-y2f">
@@ -218,16 +219,19 @@ the league</string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vLY-wI-e7a"/>
                     </view>
+                    <connections>
+                        <segue destination="efF-R5-GA5" kind="show" identifier="skillVCSegue" id="u75-eY-UZ0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZQJ-ad-P9a" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="g9O-wd-cAf" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="806" y="116"/>
         </scene>
-        <!--View Controller-->
+        <!--SkillVC-->
         <scene sceneID="s0t-A4-eAY">
             <objects>
-                <viewController id="efF-R5-GA5" sceneMemberID="viewController">
+                <viewController id="efF-R5-GA5" customClass="SkillVC" customModule="Shoosh" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Bbt-9f-zWk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
