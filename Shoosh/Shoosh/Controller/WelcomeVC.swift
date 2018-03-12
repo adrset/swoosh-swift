@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class WelcomeVC: UIViewController {
 
     @IBOutlet weak var swoosh: UIImageView!
     @IBOutlet weak var bgImage: UIImageView!
@@ -23,5 +23,9 @@ class ViewController: UIViewController {
         
     }
 
+    @IBAction func onGetStartedTapped(_ sender: Any) {
+        performSegue(withIdentifier: "leagueVCSegue", sender: self)
+    }
+    
 }
 
