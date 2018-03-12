@@ -48,7 +48,7 @@ class LeagueVC: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let skillVC = segue.destination as? SkillVC { // try to assign - unwraping
-            // prepare is always called before viewDidLoad() !
+            // prepare is always called before viewDidLoad() of a next segue !
             skillVC.player = player
         }
     }
